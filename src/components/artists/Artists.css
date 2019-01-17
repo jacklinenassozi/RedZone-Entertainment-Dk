@@ -1,0 +1,72 @@
+.sidebar{
+    width: 30%;
+  
+  }
+  
+  .image1{
+    width: 30%
+    
+  }
+  .image {
+    display: block;
+    margin-left:0px;
+    margin-right: auto;
+    width: 50%;
+    height:200px;
+    
+  }
+  .bar{
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 800px;
+    
+  }
+  .artist1{
+    /*
+    background-image: url('../../images/img1.jpeg');
+     */
+    width: 70%;
+    height:400px;
+  }
+  .artist2{
+    /*
+    background-image: url('../../images/img11.jpeg');
+    */
+    width: 70%;
+    height:300px;
+  }
+  .artist3{
+    /*
+    background-image: url('../../images/img10.jpeg');
+     */
+    width:1000px;
+    height:400px;
+  }
+  .artist4{
+    /*
+    background-image: url('../../images/img10.jpeg');
+     */
+    width: 80%;
+    height:300px;
+  }
+  .artist5{
+    /*
+    background-image: url('../../images/img12.jpeg');
+     */
+    width: 70%;
+    height:300px;
+  }
+  .artist6{
+    /*
+    background-image: url('../../images/img9.jpeg');
+     */
+    width: 70%;
+    height:300px;
+  }
+  
+  
+  
+  
+  
+  

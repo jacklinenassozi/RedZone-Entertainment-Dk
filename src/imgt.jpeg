@@ -1,0 +1,782 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Music Icons Royalty Free Vector Image - VectorStock</title>
+	<meta name="description" content="Music Icons Set. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions. ID #877544.">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/music-icons-vector-877544">
+	<meta property="og:title" content="Music Icons vector image on VectorStock">
+	<meta property="og:description" content="Music Icons Set. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg">
+	<meta property="og:image:url" content="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg">
+	<meta property="og:image:secure_url" content="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1000">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/music-icons-vector-877544">
+	<meta name="twitter:title" content="Music Icons vector image">
+	<meta name="twitter:description" content="Music Icons Set">
+	<meta name="twitter:image" content="https://cdn5.vectorstock.com/i/thumb-large/75/44/music-icons-vector-877544.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/music-icons-vector-877544">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1543284850.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1543284850.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1544656883.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1544656883.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox"
+				 class="empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off"
+									autocapitalize="none" spellcheck="false"
+									value="" placeholder="Search…">
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category"
+								value=""> <input type="hidden"
+								name="artist" value=""> <input
+								type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Popular
+						Categories</a></li>
+					<li><button type="button" data-action="signup">Sign Up</button></li>
+				</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul>
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="20">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside" data-version="c">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemscope itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/music-vectors">
+							<span itemprop="name">Music Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>Music Icons vector&nbsp;image</h1>
+
+				<figure style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg" title="Music Icons vector image" alt="Music Icons" itemprop="img"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/75/44/music-icons-vector-877544.jpg" title="Music Icons vector image" alt="Music Icons">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3">
+					<input type="hidden" id="vector_id" value="877544">
+					<input type="hidden" id="vector_title" value="Music Icons">
+					<input type="hidden" id="vector_description" value="Music Icons Set. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/music-icons-vector-877544">
+					<input type="hidden" id="vector_media" value="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg">
+					<input type="hidden" id="vector_ratio" value="1">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="ychty">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+
+								<span class="tail"></span>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked"tabindex="5">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-As-You-Go Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<span class="tail"></span>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Single Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Single Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<span class="tail"></span>
+							</div>
+													</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="sublabel"><abbr title="Adobe Illustrator file (v10+)">Ai</abbr>, <abbr title="Vector EPS file (v8+)">EPS</abbr>, <abbr title="Vector PDF file">PDF</abbr> &amp; <abbr title="High-res JPEG (300 DPI+)">JPG</abbr> files</span>
+							<span class="icon"></span>
+						</button>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="square" style="padding-top: 99%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg" title="Music Icons vector image" alt="Music Icons" itemprop="img"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/75/44/music-icons-vector-877544.jpg" title="Music Icons vector image" alt="Music Icons">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>877544</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_ychty" rel="nofollow">ychty</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options">
+						<ul>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="label">Add to Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemscope itemtype="http://schema.org/Product">
+					<div itemprop="productID">877544</div>
+					<div itemprop="url">https://www.vectorstock.com/royalty-free-vector/music-icons-vector-877544</div>
+					<div itemprop="releaseDate">2012-05-15</div>
+					<div itemprop="name">Music Icons Vector Image</div>
+					<div itemprop="description">Music Icons Set. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.</div>
+					<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+					<div itemprop="contentUrl">https://cdn5.vectorstock.com/i/1000x1000/75/44/music-icons-vector-877544.jpg</div>
+				</div>
+				<div itemscope itemprop="offers" itemtype="http://schema.org/Offer">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/95/25/music-icons-vector-69525.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-vector-69525" title="music icons vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/95/25/music-icons-vector-69525.jpg" title="music icons" alt="music icons vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/38/26/music-and-sounds-icons-vector-673826.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-and-sounds-icons-vector-673826" title="music and sounds icons vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/38/26/music-and-sounds-icons-vector-673826.jpg" title="music and sounds icons" alt="music and sounds icons vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/04/07/audio-video-ui-pixel-perfect-well-crafted-vector-20870407.jpg"><a href="//www.vectorstock.com/royalty-free-vector/audio-video-ui-pixel-perfect-well-crafted-vector-20870407" title="audio video ui pixel perfect well-crafted vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/04/07/audio-video-ui-pixel-perfect-well-crafted-vector-20870407.jpg" title="audio video ui pixel perfect well-crafted" alt="audio video ui pixel perfect well-crafted vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/93/44/media-player-color-icons-set-vector-22879344.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-color-icons-set-vector-22879344" title="media player color icons set vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/93/44/media-player-color-icons-set-vector-22879344.jpg" title="media player color icons set" alt="media player color icons set vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/76/61/3d-multimedia-icons-vector-517661.jpg"><a href="//www.vectorstock.com/royalty-free-vector/3d-multimedia-icons-vector-517661" title="3d multimedia icons vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/76/61/3d-multimedia-icons-vector-517661.jpg" title="3d multimedia icons" alt="3d multimedia icons vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/06/48/music-player-icon-sign-symbol-vector-22910648.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-player-icon-sign-symbol-vector-22910648" title="music player icon sign symbol vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/06/48/music-player-icon-sign-symbol-vector-22910648.jpg" title="music player icon sign symbol" alt="music player icon sign symbol vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/52/34/media-player-icons-set-vector-14045234.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-icons-set-vector-14045234" title="media player icons set vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/52/34/media-player-icons-set-vector-14045234.jpg" title="media player icons set" alt="media player icons set vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/62/91/music-button-icon-flat-vector-12106291.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-button-icon-flat-vector-12106291" title="Music button icon flat vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/62/91/music-button-icon-flat-vector-12106291.jpg" title="Music button icon flat" alt="Music button icon flat vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/33/82/multimedia-symbols-vector-2803382.jpg"><a href="//www.vectorstock.com/royalty-free-vector/multimedia-symbols-vector-2803382" title="multimedia symbols vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/33/82/multimedia-symbols-vector-2803382.jpg" title="multimedia symbols" alt="multimedia symbols vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/28/05/user-interface-icons-5-vector-4792805.jpg"><a href="//www.vectorstock.com/royalty-free-vector/user-interface-icons-5-vector-4792805" title="User Interface Icons 5 vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/28/05/user-interface-icons-5-vector-4792805.jpg" title="User Interface Icons 5" alt="User Interface Icons 5 vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/04/00/multimedia-button-vector-60400.jpg"><a href="//www.vectorstock.com/royalty-free-vector/multimedia-button-vector-60400" title="multimedia button vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/04/00/multimedia-button-vector-60400.jpg" title="multimedia button" alt="multimedia button vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/05/30/icons-vector-50530.jpg"><a href="//www.vectorstock.com/royalty-free-vector/icons-vector-50530" title="icons vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/05/30/icons-vector-50530.jpg" title="icons" alt="icons vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/38/44/set-of-media-and-music-icons-vector-2183844.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-of-media-and-music-icons-vector-2183844" title="Set of Media and Music Icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/38/44/set-of-media-and-music-icons-vector-2183844.jpg" title="Set of Media and Music Icons" alt="Set of Media and Music Icons vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/39/48/color-label-design-icon-design-button-music-vector-13473948.jpg"><a href="//www.vectorstock.com/royalty-free-vector/color-label-design-icon-design-button-music-vector-13473948" title="color label design icon design button music vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/39/48/color-label-design-icon-design-button-music-vector-13473948.jpg" title="color label design icon design button music" alt="color label design icon design button music vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/10/82/thin-line-icons-set-vector-5111082.jpg"><a href="//www.vectorstock.com/royalty-free-vector/thin-line-icons-set-vector-5111082" title="thin line icons set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/10/82/thin-line-icons-set-vector-5111082.jpg" title="thin line icons set" alt="thin line icons set vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/77/02/basic-set-of-transparent-glass-buttons-vector-947702.jpg"><a href="//www.vectorstock.com/royalty-free-vector/basic-set-of-transparent-glass-buttons-vector-947702" title="Basic set of transparent glass buttons vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/77/02/basic-set-of-transparent-glass-buttons-vector-947702.jpg" title="Basic set of transparent glass buttons" alt="Basic set of transparent glass buttons vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/65/38/pause-icon-vector-21996538.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pause-icon-vector-21996538" title="pause icon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/65/38/pause-icon-vector-21996538.jpg" title="pause icon" alt="pause icon vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/90/82/flat-multimedia-icons-vector-21349082.jpg"><a href="//www.vectorstock.com/royalty-free-vector/flat-multimedia-icons-vector-21349082" title="flat multimedia icons vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/90/82/flat-multimedia-icons-vector-21349082.jpg" title="flat multimedia icons" alt="flat multimedia icons vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/39/42/metal-media-button-rewind-on-and-off-position-vector-23283942.jpg"><a href="//www.vectorstock.com/royalty-free-vector/metal-media-button-rewind-on-and-off-position-vector-23283942" title="metal media button rewind on and off position vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/39/42/metal-media-button-rewind-on-and-off-position-vector-23283942.jpg" title="metal media button rewind on and off position" alt="metal media button rewind on and off position vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/08/71/music-neon-icons-vector-2220871.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-neon-icons-vector-2220871" title="Music neon icons vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/08/71/music-neon-icons-vector-2220871.jpg" title="Music neon icons" alt="Music neon icons vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="20680247" data-title="cartoon colored audio buttons ui game" data-src="https://cdn3.vectorstock.com/i/thumbs/02/47/cartoon-colored-audio-buttons-ui-game-vector-20680247.jpg"><a href="//www.vectorstock.com/royalty-free-vector/cartoon-colored-audio-buttons-ui-game-vector-20680247" title="cartoon colored audio buttons ui game vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/02/47/cartoon-colored-audio-buttons-ui-game-vector-20680247.jpg" title="cartoon colored audio buttons ui game" alt="cartoon colored audio buttons ui game vector image"></noscript></a></li>
+						<li data-id="21626059" data-title="media icons line style set with picture play" data-src="https://cdn5.vectorstock.com/i/thumbs/60/59/media-icons-line-style-set-with-picture-play-vector-21626059.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-icons-line-style-set-with-picture-play-vector-21626059" title="media icons line style set with picture play vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/60/59/media-icons-line-style-set-with-picture-play-vector-21626059.jpg" title="media icons line style set with picture play" alt="media icons line style set with picture play vector image"></noscript></a></li>
+						<li data-id="4463654" data-title="Music players and components vol 2" data-src="https://cdn5.vectorstock.com/i/thumbs/36/54/music-players-and-components-vol-2-vector-4463654.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-players-and-components-vol-2-vector-4463654" title="Music players and components vol 2 vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/36/54/music-players-and-components-vol-2-vector-4463654.jpg" title="Music players and components vol 2" alt="Music players and components vol 2 vector image"></noscript></a></li>
+						<li data-id="8379764" data-title="Music Colored Icons 5" data-src="https://cdn5.vectorstock.com/i/thumbs/97/64/music-colored-icons-5-vector-8379764.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-colored-icons-5-vector-8379764" title="Music Colored Icons 5 vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/97/64/music-colored-icons-5-vector-8379764.jpg" title="Music Colored Icons 5" alt="Music Colored Icons 5 vector image"></noscript></a></li>
+						<li data-id="1332204" data-title="music icons" data-src="https://cdn5.vectorstock.com/i/thumbs/22/04/music-icons-vector-1332204.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-vector-1332204" title="music icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/22/04/music-icons-vector-1332204.jpg" title="music icons" alt="music icons vector image"></noscript></a></li>
+						<li data-id="18808457" data-title="media player icon set" data-src="https://cdn3.vectorstock.com/i/thumbs/84/57/media-player-icon-set-vector-18808457.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-icon-set-vector-18808457" title="media player icon set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/84/57/media-player-icon-set-vector-18808457.jpg" title="media player icon set" alt="media player icon set vector image"></noscript></a></li>
+						<li data-id="2380004" data-title="Music Player 24" data-src="https://cdn5.vectorstock.com/i/thumbs/00/04/music-player-24-vector-2380004.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-player-24-vector-2380004" title="Music Player 24 vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/00/04/music-player-24-vector-2380004.jpg" title="Music Player 24" alt="Music Player 24 vector image"></noscript></a></li>
+						<li data-id="22797283" data-title="web" data-src="https://cdn4.vectorstock.com/i/thumbs/72/83/web-vector-22797283.jpg"><a href="//www.vectorstock.com/royalty-free-vector/web-vector-22797283" title="web vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/72/83/web-vector-22797283.jpg" title="web" alt="web vector image"></noscript></a></li>
+						<li data-id="109039" data-title="player icons buttons metal" data-src="https://cdn5.vectorstock.com/i/thumbs/90/39/player-icons-buttons-metal-vector-109039.jpg"><a href="//www.vectorstock.com/royalty-free-vector/player-icons-buttons-metal-vector-109039" title="player icons buttons metal vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/90/39/player-icons-buttons-metal-vector-109039.jpg" title="player icons buttons metal" alt="player icons buttons metal vector image"></noscript></a></li>
+						<li data-id="4876152" data-title="Music and audio silhouettes icons set" data-src="https://cdn3.vectorstock.com/i/thumbs/61/52/music-and-audio-silhouettes-icons-set-vector-4876152.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-and-audio-silhouettes-icons-set-vector-4876152" title="Music and audio silhouettes icons set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/61/52/music-and-audio-silhouettes-icons-set-vector-4876152.jpg" title="Music and audio silhouettes icons set" alt="Music and audio silhouettes icons set vector image"></noscript></a></li>
+						<li data-id="6913675" data-title="Fifty media buttons" data-src="https://cdn1.vectorstock.com/i/thumbs/36/75/fifty-media-buttons-vector-6913675.jpg"><a href="//www.vectorstock.com/royalty-free-vector/fifty-media-buttons-vector-6913675" title="Fifty media buttons vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/36/75/fifty-media-buttons-vector-6913675.jpg" title="Fifty media buttons" alt="Fifty media buttons vector image"></noscript></a></li>
+						<li data-id="4287321" data-title="Multimedia player icons set Outline buttons for" data-src="https://cdn2.vectorstock.com/i/thumbs/73/21/multimedia-player-icons-set-outline-buttons-for-vector-4287321.jpg"><a href="//www.vectorstock.com/royalty-free-vector/multimedia-player-icons-set-outline-buttons-for-vector-4287321" title="Multimedia player icons set Outline buttons for vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/73/21/multimedia-player-icons-set-outline-buttons-for-vector-4287321.jpg" title="Multimedia player icons set Outline buttons for" alt="Multimedia player icons set Outline buttons for vector image"></noscript></a></li>
+						<li data-id="1616607" data-title="Player Icons Set" data-src="https://cdn3.vectorstock.com/i/thumbs/66/07/player-icons-set-vector-1616607.jpg"><a href="//www.vectorstock.com/royalty-free-vector/player-icons-set-vector-1616607" title="Player Icons Set vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/66/07/player-icons-set-vector-1616607.jpg" title="Player Icons Set" alt="Player Icons Set vector image"></noscript></a></li>
+						<li data-id="1107593" data-title="media buttons icon" data-src="https://cdn4.vectorstock.com/i/thumbs/75/93/media-buttons-icon-vector-1107593.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-buttons-icon-vector-1107593" title="media buttons icon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/75/93/media-buttons-icon-vector-1107593.jpg" title="media buttons icon" alt="media buttons icon vector image"></noscript></a></li>
+						<li data-id="9670690" data-title="Media Player Icons set basic" data-src="https://cdn1.vectorstock.com/i/thumbs/06/90/media-player-icons-set-basic-vector-9670690.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-icons-set-basic-vector-9670690" title="Media Player Icons set basic vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/06/90/media-player-icons-set-basic-vector-9670690.jpg" title="Media Player Icons set basic" alt="Media Player Icons set basic vector image"></noscript></a></li>
+						<li data-id="10679603" data-title="Media player icon set" data-src="https://cdn4.vectorstock.com/i/thumbs/96/03/media-player-icon-set-vector-10679603.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-icon-set-vector-10679603" title="Media player icon set vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/96/03/media-player-icon-set-vector-10679603.jpg" title="Media player icon set" alt="Media player icon set vector image"></noscript></a></li>
+						<li data-id="1680447" data-title="Media player glassy buttons collection" data-src="https://cdn3.vectorstock.com/i/thumbs/04/47/media-player-glassy-buttons-collection-vector-1680447.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-glassy-buttons-collection-vector-1680447" title="Media player glassy buttons collection vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/04/47/media-player-glassy-buttons-collection-vector-1680447.jpg" title="Media player glassy buttons collection" alt="Media player glassy buttons collection vector image"></noscript></a></li>
+						<li data-id="21767378" data-title="media entertainment - satinbox series" data-src="https://cdn4.vectorstock.com/i/thumbs/73/78/media-entertainment-satinbox-series-vector-21767378.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-entertainment-satinbox-series-vector-21767378" title="media entertainment - satinbox series vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/73/78/media-entertainment-satinbox-series-vector-21767378.jpg" title="media entertainment - satinbox series" alt="media entertainment - satinbox series vector image"></noscript></a></li>
+						<li data-id="1343026" data-title="Media player buttons" data-src="https://cdn2.vectorstock.com/i/thumbs/30/26/media-player-buttons-vector-1343026.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-player-buttons-vector-1343026" title="Media player buttons vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/30/26/media-player-buttons-vector-1343026.jpg" title="Media player buttons" alt="Media player buttons vector image"></noscript></a></li>
+						<li data-id="23027339" data-title="design business empty template isolated minimalist" data-src="https://cdn5.vectorstock.com/i/thumbs/73/39/design-business-empty-template-isolated-minimalist-vector-23027339.jpg"><a href="//www.vectorstock.com/royalty-free-vector/design-business-empty-template-isolated-minimalist-vector-23027339" title="design business empty template isolated minimalist vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/73/39/design-business-empty-template-isolated-minimalist-vector-23027339.jpg" title="design business empty template isolated minimalist" alt="design business empty template isolated minimalist vector image"></noscript></a></li>
+						<li data-id="22195828" data-title="forward icon - red ribbon banner" data-src="https://cdn4.vectorstock.com/i/thumbs/58/28/forward-icon-red-ribbon-banner-vector-22195828.jpg"><a href="//www.vectorstock.com/royalty-free-vector/forward-icon-red-ribbon-banner-vector-22195828" title="forward icon - red ribbon banner vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/58/28/forward-icon-red-ribbon-banner-vector-22195828.jpg" title="forward icon - red ribbon banner" alt="forward icon - red ribbon banner vector image"></noscript></a></li>
+						<li data-id="21998762" data-title="button video player icon" data-src="https://cdn3.vectorstock.com/i/thumbs/87/62/button-video-player-icon-vector-21998762.jpg"><a href="//www.vectorstock.com/royalty-free-vector/button-video-player-icon-vector-21998762" title="button video player icon vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/87/62/button-video-player-icon-vector-21998762.jpg" title="button video player icon" alt="button video player icon vector image"></noscript></a></li>
+						<li data-id="20922319" data-title="record button hand drawn outline doodle icon" data-src="https://cdn5.vectorstock.com/i/thumbs/23/19/record-button-hand-drawn-outline-doodle-icon-vector-20922319.jpg"><a href="//www.vectorstock.com/royalty-free-vector/record-button-hand-drawn-outline-doodle-icon-vector-20922319" title="record button hand drawn outline doodle icon vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/23/19/record-button-hand-drawn-outline-doodle-icon-vector-20922319.jpg" title="record button hand drawn outline doodle icon" alt="record button hand drawn outline doodle icon vector image"></noscript></a></li>
+						<li data-id="33254" data-title="audio" data-src="https://cdn5.vectorstock.com/i/thumbs/32/54/audio-vector-33254.jpg"><a href="//www.vectorstock.com/royalty-free-vector/audio-vector-33254" title="audio vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/32/54/audio-vector-33254.jpg" title="audio" alt="audio vector image"></noscript></a></li>
+						<li data-id="7346451" data-title="media icons" data-src="https://cdn2.vectorstock.com/i/thumbs/64/51/media-icons-vector-7346451.jpg"><a href="//www.vectorstock.com/royalty-free-vector/media-icons-vector-7346451" title="media icons vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/64/51/media-icons-vector-7346451.jpg" title="media icons" alt="media icons vector image"></noscript></a></li>
+						<li data-id="22368227" data-title="audio video control paper icons" data-src="https://cdn3.vectorstock.com/i/thumbs/82/27/audio-video-control-paper-icons-vector-22368227.jpg"><a href="//www.vectorstock.com/royalty-free-vector/audio-video-control-paper-icons-vector-22368227" title="audio video control paper icons vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/82/27/audio-video-control-paper-icons-vector-22368227.jpg" title="audio video control paper icons" alt="audio video control paper icons vector image"></noscript></a></li>
+						<li data-id="13577135" data-title="music icons set" data-src="https://cdn1.vectorstock.com/i/thumbs/71/35/music-icons-set-vector-13577135.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-set-vector-13577135" title="music icons set vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/71/35/music-icons-set-vector-13577135.jpg" title="music icons set" alt="music icons set vector image"></noscript></a></li>
+						<li data-id="1828306" data-title="black media player icons set" data-src="https://cdn2.vectorstock.com/i/thumbs/83/06/black-media-player-icons-set-vector-1828306.jpg"><a href="//www.vectorstock.com/royalty-free-vector/black-media-player-icons-set-vector-1828306" title="black media player icons set vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/83/06/black-media-player-icons-set-vector-1828306.jpg" title="black media player icons set" alt="black media player icons set vector image"></noscript></a></li>
+						<li data-id="22537774" data-title="pause icon button symbol" data-src="https://cdn5.vectorstock.com/i/thumbs/77/74/pause-icon-button-symbol-vector-22537774.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pause-icon-button-symbol-vector-22537774" title="pause icon button symbol vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/77/74/pause-icon-button-symbol-vector-22537774.jpg" title="pause icon button symbol" alt="pause icon button symbol vector image"></noscript></a></li>
+						<li data-id="22437593" data-title="pause icon symbol sign" data-src="https://cdn4.vectorstock.com/i/thumbs/75/93/pause-icon-symbol-sign-vector-22437593.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pause-icon-symbol-sign-vector-22437593" title="pause icon symbol sign vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/75/93/pause-icon-symbol-sign-vector-22437593.jpg" title="pause icon symbol sign" alt="pause icon symbol sign vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/music-vectors"><span class="lrg">More Music Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_ychty" rel="nofollow">ychty</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/75/48/music-icons-vector-877548.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-vector-877548" title="Music Icons vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/75/48/music-icons-vector-877548.jpg" title="Music Icons" alt="Music Icons vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/54/29/music-icons-vector-985429.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-vector-985429" title="Music icons vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/54/29/music-icons-vector-985429.jpg" title="Music icons" alt="Music icons vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/90/58/music-icons-vector-589058.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-vector-589058" title="music icons vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/90/58/music-icons-vector-589058.jpg" title="music icons" alt="music icons vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/94/33/tree-with-birds-on-vector-129433.jpg"><a href="//www.vectorstock.com/royalty-free-vector/tree-with-birds-on-vector-129433" title="tree with birds on vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/94/33/tree-with-birds-on-vector-129433.jpg" title="tree with birds on" alt="tree with birds on vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/03/31/birds-vector-290331.jpg"><a href="//www.vectorstock.com/royalty-free-vector/birds-vector-290331" title="birds vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/03/31/birds-vector-290331.jpg" title="birds" alt="birds vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/50/33/arrow-icon-vector-215033.jpg"><a href="//www.vectorstock.com/royalty-free-vector/arrow-icon-vector-215033" title="arrow icon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/50/33/arrow-icon-vector-215033.jpg" title="arrow icon" alt="arrow icon vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/08/69/music-girl-vector-400869.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-girl-vector-400869" title="music girl vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/08/69/music-girl-vector-400869.jpg" title="music girl" alt="music girl vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/07/61/music-vector-400761.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-vector-400761" title="music vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/07/61/music-vector-400761.jpg" title="music" alt="music vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/07/21/listen-to-music-vector-400721.jpg"><a href="//www.vectorstock.com/royalty-free-vector/listen-to-music-vector-400721" title="listen to music vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/07/21/listen-to-music-vector-400721.jpg" title="listen to music" alt="listen to music vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/58/77/art-vector-505877.jpg"><a href="//www.vectorstock.com/royalty-free-vector/art-vector-505877" title="art vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/58/77/art-vector-505877.jpg" title="art" alt="art vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="589090" data-title="music icons" data-src="https://cdn1.vectorstock.com/i/thumbs/90/90/music-icons-vector-589090.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icons-vector-589090" title="music icons vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/90/90/music-icons-vector-589090.jpg" title="music icons" alt="music icons vector image vector image"></noscript></a></li>
+						<li data-id="129473" data-title="bird tree" data-src="https://cdn4.vectorstock.com/i/thumbs/94/73/bird-tree-vector-129473.jpg"><a href="//www.vectorstock.com/royalty-free-vector/bird-tree-vector-129473" title="bird tree vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/94/73/bird-tree-vector-129473.jpg" title="bird tree" alt="bird tree vector image vector image"></noscript></a></li>
+						<li data-id="589008" data-title="music icon" data-src="https://cdn4.vectorstock.com/i/thumbs/90/08/music-icon-vector-589008.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-icon-vector-589008" title="music icon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/90/08/music-icon-vector-589008.jpg" title="music icon" alt="music icon vector image vector image"></noscript></a></li>
+						<li data-id="215093" data-title="arrow icons" data-src="https://cdn4.vectorstock.com/i/thumbs/50/93/arrow-icons-vector-215093.jpg"><a href="//www.vectorstock.com/royalty-free-vector/arrow-icons-vector-215093" title="arrow icons vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/50/93/arrow-icons-vector-215093.jpg" title="arrow icons" alt="arrow icons vector image vector image"></noscript></a></li>
+						<li data-id="588918" data-title="record" data-src="https://cdn4.vectorstock.com/i/thumbs/89/18/record-vector-588918.jpg"><a href="//www.vectorstock.com/royalty-free-vector/record-vector-588918" title="record vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/89/18/record-vector-588918.jpg" title="record" alt="record vector image vector image"></noscript></a></li>
+						<li data-id="877546" data-title="Learning from Audio book" data-src="https://cdn2.vectorstock.com/i/thumbs/75/46/learning-from-audio-book-vector-877546.jpg"><a href="//www.vectorstock.com/royalty-free-vector/learning-from-audio-book-vector-877546" title="Learning from Audio book vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/75/46/learning-from-audio-book-vector-877546.jpg" title="Learning from Audio book" alt="Learning from Audio book vector image vector image"></noscript></a></li>
+						<li data-id="162193" data-title="musical cows" data-src="https://cdn4.vectorstock.com/i/thumbs/21/93/musical-cows-vector-162193.jpg"><a href="//www.vectorstock.com/royalty-free-vector/musical-cows-vector-162193" title="musical cows vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/21/93/musical-cows-vector-162193.jpg" title="musical cows" alt="musical cows vector image vector image"></noscript></a></li>
+						<li data-id="588920" data-title="drum kit" data-src="https://cdn1.vectorstock.com/i/thumbs/89/20/drum-kit-vector-588920.jpg"><a href="//www.vectorstock.com/royalty-free-vector/drum-kit-vector-588920" title="drum kit vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/89/20/drum-kit-vector-588920.jpg" title="drum kit" alt="drum kit vector image vector image"></noscript></a></li>
+						<li data-id="588998" data-title="trumpet" data-src="https://cdn4.vectorstock.com/i/thumbs/89/98/trumpet-vector-588998.jpg"><a href="//www.vectorstock.com/royalty-free-vector/trumpet-vector-588998" title="trumpet vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/89/98/trumpet-vector-588998.jpg" title="trumpet" alt="trumpet vector image vector image"></noscript></a></li>
+						<li data-id="129387" data-title="autumn landscape" data-src="https://cdn3.vectorstock.com/i/thumbs/93/87/autumn-landscape-vector-129387.jpg"><a href="//www.vectorstock.com/royalty-free-vector/autumn-landscape-vector-129387" title="autumn landscape vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/93/87/autumn-landscape-vector-129387.jpg" title="autumn landscape" alt="autumn landscape vector image vector image"></noscript></a></li>
+						<li data-id="589076" data-title="violin" data-src="https://cdn2.vectorstock.com/i/thumbs/90/76/violin-vector-589076.jpg"><a href="//www.vectorstock.com/royalty-free-vector/violin-vector-589076" title="violin vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/90/76/violin-vector-589076.jpg" title="violin" alt="violin vector image vector image"></noscript></a></li>
+						<li data-id="589024" data-title="loudspeaker" data-src="https://cdn5.vectorstock.com/i/thumbs/90/24/loudspeaker-vector-589024.jpg"><a href="//www.vectorstock.com/royalty-free-vector/loudspeaker-vector-589024" title="loudspeaker vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/90/24/loudspeaker-vector-589024.jpg" title="loudspeaker" alt="loudspeaker vector image vector image"></noscript></a></li>
+						<li data-id="129535" data-title="bird" data-src="https://cdn1.vectorstock.com/i/thumbs/95/35/bird-vector-129535.jpg"><a href="//www.vectorstock.com/royalty-free-vector/bird-vector-129535" title="bird vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/95/35/bird-vector-129535.jpg" title="bird" alt="bird vector image vector image"></noscript></a></li>
+						<li data-id="589082" data-title="electric guitar" data-src="https://cdn3.vectorstock.com/i/thumbs/90/82/electric-guitar-vector-589082.jpg"><a href="//www.vectorstock.com/royalty-free-vector/electric-guitar-vector-589082" title="electric guitar vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/90/82/electric-guitar-vector-589082.jpg" title="electric guitar" alt="electric guitar vector image vector image"></noscript></a></li>
+						<li data-id="589064" data-title="accordion" data-src="https://cdn5.vectorstock.com/i/thumbs/90/64/accordion-vector-589064.jpg"><a href="//www.vectorstock.com/royalty-free-vector/accordion-vector-589064" title="accordion vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/90/64/accordion-vector-589064.jpg" title="accordion" alt="accordion vector image vector image"></noscript></a></li>
+						<li data-id="589096" data-title="wood pipes" data-src="https://cdn2.vectorstock.com/i/thumbs/90/96/wood-pipes-vector-589096.jpg"><a href="//www.vectorstock.com/royalty-free-vector/wood-pipes-vector-589096" title="wood pipes vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/90/96/wood-pipes-vector-589096.jpg" title="wood pipes" alt="wood pipes vector image vector image"></noscript></a></li>
+						<li data-id="505847" data-title="ballet" data-src="https://cdn3.vectorstock.com/i/thumbs/58/47/ballet-vector-505847.jpg"><a href="//www.vectorstock.com/royalty-free-vector/ballet-vector-505847" title="ballet vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/58/47/ballet-vector-505847.jpg" title="ballet" alt="ballet vector image vector image"></noscript></a></li>
+						<li data-id="162341" data-title="joker" data-src="https://cdn2.vectorstock.com/i/thumbs/23/41/joker-vector-162341.jpg"><a href="//www.vectorstock.com/royalty-free-vector/joker-vector-162341" title="joker vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/23/41/joker-vector-162341.jpg" title="joker" alt="joker vector image vector image"></noscript></a></li>
+						<li data-id="505935" data-title="belly dance" data-src="https://cdn1.vectorstock.com/i/thumbs/59/35/belly-dance-vector-505935.jpg"><a href="//www.vectorstock.com/royalty-free-vector/belly-dance-vector-505935" title="belly dance vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/59/35/belly-dance-vector-505935.jpg" title="belly dance" alt="belly dance vector image vector image"></noscript></a></li>
+						<li data-id="400785" data-title="singer" data-src="https://cdn1.vectorstock.com/i/thumbs/07/85/singer-vector-400785.jpg"><a href="//www.vectorstock.com/royalty-free-vector/singer-vector-400785" title="singer vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/07/85/singer-vector-400785.jpg" title="singer" alt="singer vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_ychty" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/music-vectors">Music</a></li>
+					<li><a href="/royalty-free-vectors/fast-forward-vectors">Fast-forward</a></li>
+					<li><a href="/royalty-free-vectors/speaker-vectors">Speaker</a></li>
+					<li><a href="/royalty-free-vectors/pause-vectors">Pause</a></li>
+					<li><a href="/royalty-free-vectors/icon-vectors">Icon</a></li>
+					<li><a href="/royalty-free-vectors/headphone-vectors">Headphone</a></li>
+					<li><a href="/royalty-free-vectors/microphone-vectors">Microphone</a></li>
+					<li><a href="/royalty-free-vectors/play-vectors">Play</a></li>
+					<li><a href="/royalty-free-vectors/stop-vectors">Stop</a></li>
+					<li><a href="/royalty-free-vectors/record-vectors">Record</a></li>
+					<li><a href="/royalty-free-vectors/rewind-vectors">Rewind</a></li>
+					<li><a href="/royalty-free-vectors/replay-vectors">Replay</a></li>
+					<li><a href="/royalty-free-vectors/sound-vectors">Sound</a></li>
+					<li><a href="/royalty-free-vectors/mute-vectors">Mute</a></li>
+					<li><a href="/royalty-free-vectors/disc-vectors">Disc</a></li>
+					<li><a href="/royalty-free-vectors/bar-vectors">Bar</a></li>
+					<li><a href="/royalty-free-vectors/repeat-vectors">Repeat</a></li>
+					<li><a href="/royalty-free-vectors/volume-vectors">Volume</a></li>
+					<li><a href="/royalty-free-vectors/compact-vectors">Compact</a></li>
+					<li><a href="/royalty-free-vectors/symbol-vectors">Symbol</a></li>
+					<li><a href="/royalty-free-vectors/back-vectors">Back</a></li>
+					<li><a href="/royalty-free-vectors/next-vectors">Next</a></li>
+					<li><a href="/royalty-free-vectors/sign-vectors">Sign</a></li>
+					<li><a href="/royalty-free-vectors/button-vectors">Button</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+									</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/signup?contributor" title="Become a VectorStock Contributor">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					<ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2019. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJDBEQDFQUCFJdDEEVEAQHFwpFFFkGBVcGDA==","queueTime":0,"applicationTime":33,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>

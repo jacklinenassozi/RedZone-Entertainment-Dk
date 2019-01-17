@@ -1,0 +1,20 @@
+.homepage-container {
+    box-sizing: border-box;
+    padding: 4em;
+    margin: 0;
+    height: 90vh;
+    background-color: black;
+    background-image: url('../../images/HomepageImages/img4.jpeg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    z-index: -1;
+    opacity: 0.9;
+  }
+  
+  main {
+    line-height: 1.5em;
+    font-size: 3.4em;
+    height: 100%;
+  }
