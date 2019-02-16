@@ -5,7 +5,7 @@
   }
   
   #about {
-    background-color: dodgerblue;
+    background-color: white;
     color: white;
     width: 100%;
     text-align: left;
@@ -14,7 +14,9 @@
   #contact {
     width: 100%;
     background-color: lightgrey;
-    text-align: left;
+    background-image: url('../../images/HomepageImages/img1.jpeg');
+    color:black;
+    text-align: center;
   }
   
   p,
@@ -24,16 +26,55 @@
     line-height: 1.3em;
   }
   
+
+  .info {
+    background-color:darkmagenta;
+    background-image: url('../../images/HomepageImages/img3.jpeg');
+    color: black;
+    width: 100%;
+    text-align: left;
+  }
+
+
+  .signUp {
+
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    text-align:left;
+  }
+  .redzone{
+    background-color:darkred;
+    color: white;
+    width: 100%;
+    text-align: center;
+    box-sizing: content-box;
+ 
+    padding: 1em;
+      
+  }
+
+#heading{
+  color:red;
+}
+
+
   @media all and (min-width: 760px) {
-    .about-us-container {
+    .about-us-container,.mainContainer {
       display: flex;
       flex-wrap: wrap;
     }
     #about {
-      width: 70%;
+      width: 50%;
     }
     #contact {
-      width: 30%;
+      width: 50%;
     }
+    .info{
+      width:30%
+    }
+    .signUp{
+      width:70%
+    }
+    
   }
   

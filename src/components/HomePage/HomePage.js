@@ -19,8 +19,9 @@ const HomePage = () => (
       There isnt a formal education path required to become a music promoter .The most essential skills are a love of music and business savvy.The ability to negotiate effectively is essential as you will need to bargain with artists ,venues,hotels and more understanding different asspects of business is important
       </p>
       <br />
-      
+
     </div>
+      
   </div>
 );
 
